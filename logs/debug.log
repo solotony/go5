@@ -1,0 +1,992 @@
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-04 08:55:24; autoreload.py:598)
+ERROR:django.request: Internal Server Error: /category/ (2020-07-04 08:55:36; log.py:228)
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 828, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Category' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 986, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 670, in resolve
+    obj = self.var.resolve(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 795, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 836, in _resolve_lookup
+    current = getattr(current, bit)
+  File "C:\WORK\200525-proshop\proshop\store\models\categories.py", line 339, in <lambda>
+    lambda self : self.descendants_tree_node.mptt_right > self.descendants_tree_node.mptt_left + 1
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\cached_property.py", line 35, in __get__
+    value = obj.__dict__[self.func.__name__] = self.func(obj)
+  File "C:\WORK\200525-proshop\proshop\store\models\categories.py", line 334, in descendants_tree_node
+    assert(res)
+AssertionError
+WARNING:django.request: Not Found: /ru/ (2020-07-04 08:55:43; log.py:228)
+ERROR:django.request: Internal Server Error: /en/category/ (2020-07-04 08:55:50; log.py:228)
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 828, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Category' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 986, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 670, in resolve
+    obj = self.var.resolve(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 795, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 836, in _resolve_lookup
+    current = getattr(current, bit)
+  File "C:\WORK\200525-proshop\proshop\store\models\categories.py", line 339, in <lambda>
+    lambda self : self.descendants_tree_node.mptt_right > self.descendants_tree_node.mptt_left + 1
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\cached_property.py", line 35, in __get__
+    value = obj.__dict__[self.func.__name__] = self.func(obj)
+  File "C:\WORK\200525-proshop\proshop\store\models\categories.py", line 334, in descendants_tree_node
+    assert(res)
+AssertionError
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\admin.py changed, reloading. (2020-07-04 08:59:30; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-04 08:59:32; autoreload.py:598)
+ERROR:django.request: Internal Server Error: /admin/store/unit/11/change/ (2020-07-04 09:00:02; log.py:228)
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 188, in render
+    return template.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 986, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 670, in resolve
+    obj = self.var.resolve(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 795, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 857, in _resolve_lookup
+    current = current()
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\helpers.py", line 132, in label_tag
+    contents = conditional_escape(self.field.label)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\html.py", line 97, in conditional_escape
+    text = str(text)
+TypeError: __str__ returned non-string (type __proxy__)
+ERROR:django.request: Internal Server Error: /admin/store/unit/9/change/ (2020-07-04 09:00:13; log.py:228)
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 188, in render
+    return template.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\defaulttags.py", line 309, in render
+    return nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 986, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 670, in resolve
+    obj = self.var.resolve(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 795, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 857, in _resolve_lookup
+    current = current()
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\helpers.py", line 132, in label_tag
+    contents = conditional_escape(self.field.label)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\html.py", line 97, in conditional_escape
+    text = str(text)
+TypeError: __str__ returned non-string (type __proxy__)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\simple_entites.py changed, reloading. (2020-07-04 09:02:26; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-04 09:02:28; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\simple_entites.py changed, reloading. (2020-07-04 09:24:54; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-04 09:24:56; autoreload.py:598)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:13:10; autoreload.py:598)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:13:38; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\admin.py changed, reloading. (2020-07-07 15:14:35; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:14:37; autoreload.py:598)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:15:11; autoreload.py:598)
+WARNING:django.request: Not Found: /favicon.ico (2020-07-07 15:15:24; log.py:228)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\customers.py changed, reloading. (2020-07-07 15:19:48; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:19:51; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\customers.py changed, reloading. (2020-07-07 15:20:40; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:20:42; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\admin.py changed, reloading. (2020-07-07 15:27:01; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:27:03; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\customers.py changed, reloading. (2020-07-07 15:29:56; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:29:58; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\admin.py changed, reloading. (2020-07-07 15:30:16; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:30:18; autoreload.py:598)
+ERROR:django.request: Internal Server Error: /admin/store/customer/3/change/ (2020-07-07 15:30:21; log.py:228)
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 702, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\forms\models.py", line 554, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\forms\models.py", line 267, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (patronymic) specified for Customer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 607, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\sites.py", line 231, in inner
+    return view(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1641, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1555, in _changeform_view
+    ModelForm = self.get_form(request, obj, change=not add)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 706, in get_form
+    % (e, self.__class__.__name__)
+django.core.exceptions.FieldError: Unknown field(s) (patronymic) specified for Customer. Check fields/fieldsets/exclude attributes of class CustomerAdmin.
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\admin.py changed, reloading. (2020-07-07 15:30:42; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:30:44; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\admin.py changed, reloading. (2020-07-07 15:31:52; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:31:54; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\admin.py changed, reloading. (2020-07-07 15:32:39; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:32:41; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\customers.py changed, reloading. (2020-07-07 15:33:28; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:33:30; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\admin.py changed, reloading. (2020-07-07 15:33:49; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:33:51; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\customers.py changed, reloading. (2020-07-07 15:36:03; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:36:05; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\customers.py changed, reloading. (2020-07-07 15:36:12; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:36:15; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\customers.py changed, reloading. (2020-07-07 15:43:35; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:43:38; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\customers.py changed, reloading. (2020-07-07 15:44:06; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:44:09; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\customers.py changed, reloading. (2020-07-07 15:48:52; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:48:54; autoreload.py:598)
+ERROR:django.request: Internal Server Error: /admin/store/customer/add/ (2020-07-07 15:49:38; log.py:228)
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\sqlite3\base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: sub-select returns 2 columns - expected 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 607, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\sites.py", line 231, in inner
+    return view(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1638, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1565, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1081, in save_model
+    obj.save()
+  File "C:\WORK\200525-proshop\proshop\store\models\customers.py", line 73, in save
+    self.groups.add(Customer.customers_group)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 946, in add
+    through_defaults=through_defaults,
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1129, in _add_items
+    ], ignore_conflicts=True)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 493, in bulk_create
+    objs_without_pk, fields, batch_size, ignore_conflicts=ignore_conflicts,
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 1230, in _batched_insert
+    self._insert(item, fields=fields, using=self.db, ignore_conflicts=ignore_conflicts)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 1204, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\compiler.py", line 1391, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 198, in execute
+    return self._record(self.cursor.execute, sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 133, in _record
+    return method(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\sqlite3\base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: sub-select returns 2 columns - expected 1
+ERROR:django.request: Internal Server Error: /admin/store/customer/3/change/ (2020-07-07 15:50:55; log.py:228)
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\sqlite3\base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: sub-select returns 2 columns - expected 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 607, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\sites.py", line 231, in inner
+    return view(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1641, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1565, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1081, in save_model
+    obj.save()
+  File "C:\WORK\200525-proshop\proshop\store\models\customers.py", line 73, in save
+    self.groups.add(Customer.customers_group)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 946, in add
+    through_defaults=through_defaults,
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\fields\related_descriptors.py", line 1129, in _add_items
+    ], ignore_conflicts=True)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 493, in bulk_create
+    objs_without_pk, fields, batch_size, ignore_conflicts=ignore_conflicts,
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 1230, in _batched_insert
+    self._insert(item, fields=fields, using=self.db, ignore_conflicts=ignore_conflicts)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 1204, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\compiler.py", line 1391, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 198, in execute
+    return self._record(self.cursor.execute, sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 133, in _record
+    return method(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\sqlite3\base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: sub-select returns 2 columns - expected 1
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\customers.py changed, reloading. (2020-07-07 15:51:25; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:51:27; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\simple_entites.py changed, reloading. (2020-07-07 15:57:13; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 15:57:15; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\discounts.py changed, reloading. (2020-07-07 16:02:04; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 16:02:36; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\admin.py changed, reloading. (2020-07-07 16:08:54; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 16:08:55; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\simple_entites.py changed, reloading. (2020-07-07 16:12:11; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 16:12:13; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\admin.py changed, reloading. (2020-07-07 16:32:16; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 16:32:19; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\admin\categories.py changed, reloading. (2020-07-07 16:32:47; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 16:32:49; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\simple_entites.py changed, reloading. (2020-07-07 16:34:00; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 16:34:02; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\simple_entites.py changed, reloading. (2020-07-07 16:35:03; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 16:35:05; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\simple_entites.py changed, reloading. (2020-07-07 16:37:09; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 16:37:11; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\simple_entites.py changed, reloading. (2020-07-07 16:37:54; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 16:37:57; autoreload.py:598)
+ERROR:django.request: Internal Server Error: /admin/store/character/12/change/ (2020-07-07 16:47:24; log.py:228)
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 607, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\sites.py", line 231, in inner
+    return view(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1641, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1583, in _changeform_view
+    formsets, inline_instances = self._create_formsets(request, obj, change=True)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1954, in _create_formsets
+    formset = FormSet(**formset_params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\forms\models.py", line 900, in __init__
+    qs = queryset.filter(**{self.fk.name: self.instance})
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\query.py", line 1351, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\query.py", line 1382, in _add_q
+    check_filterable=check_filterable,
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\query.py", line 1264, in build_filter
+    self.check_filterable(value)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\query.py", line 1132, in check_filterable
+    expression.__class__.__name__ + ' is disallowed in the filter '
+django.db.utils.NotSupportedError: Character is disallowed in the filter clause.
+ERROR:django.request: Internal Server Error: /admin/store/character/11/change/ (2020-07-07 16:47:46; log.py:228)
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 607, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\sites.py", line 231, in inner
+    return view(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1641, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1583, in _changeform_view
+    formsets, inline_instances = self._create_formsets(request, obj, change=True)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1954, in _create_formsets
+    formset = FormSet(**formset_params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\forms\models.py", line 900, in __init__
+    qs = queryset.filter(**{self.fk.name: self.instance})
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\query.py", line 1351, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\query.py", line 1382, in _add_q
+    check_filterable=check_filterable,
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\query.py", line 1264, in build_filter
+    self.check_filterable(value)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\query.py", line 1132, in check_filterable
+    expression.__class__.__name__ + ' is disallowed in the filter '
+django.db.utils.NotSupportedError: Character is disallowed in the filter clause.
+ERROR:django.request: Internal Server Error: /admin/store/character/11/change/ (2020-07-07 16:48:24; log.py:228)
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 607, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\sites.py", line 231, in inner
+    return view(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1641, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1583, in _changeform_view
+    formsets, inline_instances = self._create_formsets(request, obj, change=True)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1954, in _create_formsets
+    formset = FormSet(**formset_params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\forms\models.py", line 900, in __init__
+    qs = queryset.filter(**{self.fk.name: self.instance})
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 904, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 923, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\query.py", line 1351, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\query.py", line 1382, in _add_q
+    check_filterable=check_filterable,
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\query.py", line 1264, in build_filter
+    self.check_filterable(value)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\query.py", line 1132, in check_filterable
+    expression.__class__.__name__ + ' is disallowed in the filter '
+django.db.utils.NotSupportedError: Character is disallowed in the filter clause.
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\addresses.py changed, reloading. (2020-07-07 16:50:56; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 16:50:57; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\addresses.py changed, reloading. (2020-07-07 16:52:33; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 16:52:35; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\addresses.py changed, reloading. (2020-07-07 16:53:52; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 16:53:54; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\addresses.py changed, reloading. (2020-07-07 16:54:41; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 16:54:43; autoreload.py:598)
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\products.py changed, reloading. (2020-07-07 16:59:01; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 16:59:03; autoreload.py:598)
+ERROR:django.request: Internal Server Error: /admin/store/address/1/change/ (2020-07-07 16:59:05; log.py:228)
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\sqlite3\base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: store_address.address1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 607, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\sites.py", line 231, in inner
+    return view(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1641, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1543, in _changeform_view
+    obj = self.get_object(request, unquote(object_id), to_field)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 755, in get_object
+    return queryset.get(**{field.name: object_id})
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 411, in get
+    num = len(clone)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 258, in __len__
+    self._fetch_all()
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 1261, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 57, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\compiler.py", line 1151, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 198, in execute
+    return self._record(self.cursor.execute, sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 133, in _record
+    return method(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\sqlite3\base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: store_address.address1
+ERROR:django.request: Internal Server Error: /admin/store/address/1/change/ (2020-07-07 16:59:09; log.py:228)
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\sqlite3\base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such column: store_address.address1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 607, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\sites.py", line 231, in inner
+    return view(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1641, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1522, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 1543, in _changeform_view
+    obj = self.get_object(request, unquote(object_id), to_field)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\options.py", line 755, in get_object
+    return queryset.get(**{field.name: object_id})
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 411, in get
+    num = len(clone)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 258, in __len__
+    self._fetch_all()
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 1261, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\query.py", line 57, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\sql\compiler.py", line 1151, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 198, in execute
+    return self._record(self.cursor.execute, sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 133, in _record
+    return method(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\backends\sqlite3\base.py", line 396, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such column: store_address.address1
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\addresses.py changed, reloading. (2020-07-07 17:03:04; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 17:03:05; autoreload.py:598)
+ERROR:django.request: Internal Server Error: /admin/store/address/ (2020-07-07 17:03:07; log.py:228)
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\options.py", line 581, in get_field
+    return self.fields_map[field_name]
+KeyError: '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\utils.py", line 262, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\utils.py", line 293, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\options.py", line 583, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Address has no field named '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 342, in result_list
+    'results': list(results(cl)),
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 318, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 309, in __init__
+    super().__init__(*items)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 232, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\utils.py", line 275, in lookup_field
+    value = attr()
+  File "C:\WORK\200525-proshop\proshop\store\models\addresses.py", line 99, in __str__
+    str += ', ' + self.postcode
+TypeError: unsupported operand type(s) for +=: 'Country' and 'str'
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\addresses.py changed, reloading. (2020-07-07 17:03:18; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 17:03:20; autoreload.py:598)
+ERROR:django.request: Internal Server Error: /admin/store/address/ (2020-07-07 17:03:23; log.py:228)
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\options.py", line 581, in get_field
+    return self.fields_map[field_name]
+KeyError: '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\utils.py", line 262, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\utils.py", line 293, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\db\models\options.py", line 583, in get_field
+    raise FieldDoesNotExist("%s has no field named '%s'" % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: Address has no field named '__str__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\test\utils.py", line 95, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 936, in render
+    bit = node.render_annotated(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\base.py", line 903, in render_annotated
+    return self.render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\templatetags\base.py", line 33, in render
+    return super().render(context)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\template\library.py", line 214, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 342, in result_list
+    'results': list(results(cl)),
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 318, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 309, in __init__
+    super().__init__(*items)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 232, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "C:\WORK\200525-proshop\proshop-env\lib\site-packages\django\contrib\admin\utils.py", line 275, in lookup_field
+    value = attr()
+  File "C:\WORK\200525-proshop\proshop\store\models\addresses.py", line 99, in __str__
+    str += ', ' + self.postcode
+TypeError: unsupported operand type(s) for +=: 'Country' and 'str'
+INFO:django.utils.autoreload: C:\WORK\200525-proshop\proshop\store\models\addresses.py changed, reloading. (2020-07-07 17:03:46; autoreload.py:222)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-07-07 17:03:47; autoreload.py:598)
+INFO:django.utils.autoreload: Watching for file changes with StatReloader (2020-10-10 12:10:00; autoreload.py:598)

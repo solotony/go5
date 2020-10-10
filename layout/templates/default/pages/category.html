@@ -1,0 +1,103 @@
+{% extends 'default/layout.html' %}
+
+{% block content %}
+	<h1>{{ category.name }}</h1>
+	<dl>
+		<dt>category.seo_title</dt><dd>{{ category.seo_title }}</dd>
+		<dt>category.seo_description</dt><dd>{{ category.seo_description }}</dd>
+		<dt>category.tree_node</dt><dd>{{ category.tree_node }}</dd>
+		<dt>category.is_descendants</dt><dd>{{ category.is_descendants }}</dd>
+	</dl>
+
+	{% if category.parents.exists  %}
+		<h3>Parents</h3>
+		<ul>
+			{% for parent in category.parents.all %}
+				<li><a href="{{ parent.get_absolute_url }}">{{ parent }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif  %}
+
+	{% if category.is_descendants  %}
+		<h3>Childs</h3>
+		<ul>
+			{% for child in category.childs.all %}
+				<li><a href="{{ child.get_absolute_url }}">{{ child }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif  %}
+
+
+	{% if category.is_descendants  %}
+		<h3>Descendants list</h3>
+		<ul>
+			{% for descendant in category.descendants_qs %}
+				<li><a href="{{ descendant.get_absolute_url }}">{{ descendant }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif  %}
+
+
+	{% if category.is_descendants  %}
+		<h3>Descendants tree</h3>
+		<ul>
+			{% for descendant in category.descendants_tree_qs %}
+				<li style="margin-left:{{ descendant.mptt_level|add:"-1" }}0px"><a href="{{ descendant.category.get_absolute_url }}">{{ descendant.category }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif  %}
+
+	{% if category.is_inheriters  %}
+		<h3>Inheriters tree</h3>
+		<ul>
+			{% for inheriter in category.inheriters_tree_qs %}
+				<li style="margin-left:{{ inheriter.mptt_level|add:"-1" }}0px"><a href="{{ inheriter.category.get_absolute_url }}">{{ inheriter.category }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif  %}
+
+	{% if category.is_predecessors  %}
+		<h3>Predecessors list</h3>
+		<ul>
+			{% for predecessor in category.predecessors_qs.all %}
+				<li><a href="{{ predecessor.get_absolute_url }}">{{ predecessor }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif  %}
+
+
+	{% if category.is_ancestors  %}
+		<h3>Ancestors list</h3>
+		<ul>
+			{% for ancestor in category.ancestors_qs.all %}
+				<li><a href="{{ ancestor.get_absolute_url }}">{{ ancestor }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif  %}
+
+
+
+		<h3>Ancestors characters</h3>
+		<ul>
+			{% for character in category.ancestors_characters_qs.all %}
+				<li>{{ character }}</li>
+			{% endfor %}
+		</ul>
+
+		<h3>Custom characters</h3>
+		<ul>
+			{% for character in category.characters.all %}
+				<li>{{ character }}</li>
+			{% endfor %}
+		</ul>
+
+
+		<h3>All characters</h3>
+		<ul>
+			{% for character in category.all_characters_qs.all %}
+				<li>{{ character }}</li>
+			{% endfor %}
+		</ul>
+
+
+{% endblock %}

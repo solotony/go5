@@ -1,0 +1,20 @@
+{% extends "admin/change_form.html" %}
+
+{% block after_related_objects %}
+	<fieldset class="module collapse collapsed">
+		<h2>Унаследованные характеристики</h2>
+    <div class="description">Характеристики наследуются от родительских категорий, если  флаг
+	    "наследование характеристик" включен</div>
+<div class="form-row">
+<ul>
+		{% for character in original.ancestors_characters_qs.all %}
+
+		    <li>character = {{ character }}</li>
+
+		{% endfor %}
+</ul>
+</div>
+
+	</fieldset>
+	{{ block.super }}
+{% endblock %}

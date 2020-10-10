@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-31 19:29+0300\n"
+"PO-Revision-Date: 2020-05-31 17:57+0230\n"
+"Last-Translator: b'  <as@solotony.com>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.4\n"
+
+#: .\common\models\seo.py:31
+msgid "SEO title"
+msgstr ""
+
+#: .\common\models\seo.py:38
+msgid "SEO description"
+msgstr ""
+
+#: .\common\models\sluggable.py:35
+msgid "slug"
+msgstr ""
+
+#: .\common\models\thumbnailed.py:37
+msgid "Image"
+msgstr ""
+
+#: .\common\models\timestamps.py:26 .\common\models\timestamps.py:54
+msgid "creation time"
+msgstr ""
+
+#: .\common\models\timestamps.py:35 .\common\models\timestamps.py:63
+msgid "update time"
+msgstr ""
+
+#: .\layout\templates\default\layout.html:10
+msgid "ProStore"
+msgstr ""
+
+#: .\layout\templates\default\layout.html:15
+msgid "Language"
+msgstr ""
+
+#: .\store\admin.py:9
+msgid "ProStore Administration"
+msgstr ""
+
+#: .\store\admin.py:76
+msgid "Options"
+msgstr ""
+
+#: .\store\admin.py:80
+msgid "SEO"
+msgstr ""
+
+#: .\store\models\categories.py:93
+msgid "Category character"
+msgstr ""
+
+#: .\store\models\categories.py:94
+msgid "Category characters"
+msgstr ""
+
+#: .\store\models\categories.py:117 .\store\models\categories.py:132
+msgid "Parent category"
+msgstr ""
+
+#: .\store\models\categories.py:118 .\store\models\categories.py:202
+msgid "Parent categories"
+msgstr ""
+
+#: .\store\models\categories.py:125
+msgid "Child category"
+msgstr ""
+
+#: .\store\models\categories.py:137
+msgid "Character inheritance"
+msgstr ""
+
+#: .\store\models\categories.py:138
+#, fuzzy
+msgid "***help_text*** Character inheritance"
+msgstr ""
+"If this flag is enabled, the category can have its own characteristics, "
+"otherwise only inherited characteristics are used in the category. To enable "
+"this flag for a child category, the parent category must also have this flag "
+"enabled."
+
+#: .\store\models\categories.py:161
+msgid "Category"
+msgstr ""
+
+#: .\store\models\categories.py:162
+msgid "Categories"
+msgstr ""
+
+#: .\store\models\categories.py:173
+msgid "Category title"
+msgstr ""
+
+#: .\store\models\categories.py:178
+msgid "Has products"
+msgstr "Has products 1"
+
+#: .\store\models\categories.py:179
+msgid "***help_text*** Has products"
+msgstr ""
+"If this flag is enabled, the category can be assigned to products, otherwise "
+"it can only have subcategories."
+
+#: .\store\models\categories.py:184
+msgid "Show products"
+msgstr ""
+
+#: .\store\models\categories.py:185
+msgid "***help_text*** Show products"
+msgstr ""
+"If this flag is enabled, the output of the category displays products of "
+"this and nested categories, otherwise the output of products is not "
+"performed."
+
+#: .\store\models\categories.py:190
+msgid "Show subcategories products"
+msgstr ""
+
+#: .\store\models\categories.py:191
+msgid "***help_text*** Show subcategories products"
+msgstr ""
+"If this flag is enabled, nested categories are also displayed when "
+"displaying categories, otherwise only your own products are displayed."
+
+#: .\store\models\categories.py:196
+msgid "Custom characters"
+msgstr ""
+
+#: .\store\models\categories.py:197
+msgid "***help_text*** Custom characters"
+msgstr ""
+"If this flag is enabled, the category can have its own characteristics, "
+"otherwise only inherited characteristics are used in the category. To enable "
+"this flag for a child category, the parent category must also have this flag "
+"enabled."
+
+#: .\store\models\categories.py:213
+msgid "Custom category characters"
+msgstr ""
+
+#: .\store\models\categories.py:221
+msgid "Unnamed category #"
+msgstr ""
+
+#: .\store\models\categories.py:223
+msgid "New category"
+msgstr ""
+
+#: .\store\models\characters.py:28 .\store\models\characters.py:133
+msgid "Character"
+msgstr ""
+
+#: .\store\models\characters.py:29
+msgid "Characters"
+msgstr ""
+
+#: .\store\models\characters.py:37
+msgid "Internal character name"
+msgstr ""
+
+#: .\store\models\characters.py:45
+msgid "Hadle"
+msgstr ""
+
+#: .\store\models\characters.py:46
+msgid "case insensitive"
+msgstr ""
+
+#: .\store\models\characters.py:53
+msgid "Public character name"
+msgstr ""
+
+#: .\store\models\characters.py:60
+msgid "Help text"
+msgstr ""
+
+#: .\store\models\characters.py:66
+msgid "Detailed description"
+msgstr ""
+
+#: .\store\models\characters.py:75
+msgid "Character position in search map"
+msgstr ""
+
+#: .\store\models\characters.py:88
+msgid "Integer value"
+msgstr ""
+
+#: .\store\models\characters.py:89
+msgid "Float value"
+msgstr ""
+
+#: .\store\models\characters.py:90
+msgid "Fixed decimal value"
+msgstr ""
+
+#: .\store\models\characters.py:91
+msgid "Set of string values"
+msgstr ""
+
+#: .\store\models\characters.py:125 .\store\models\characters.py:141
+msgid "Character value"
+msgstr ""
+
+#: .\store\models\characters.py:126
+msgid "Character values"
+msgstr ""

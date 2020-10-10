@@ -1,0 +1,37 @@
+<html lang="ru"> {% load i18n %}
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content=""/>
+
+	<style>
+		header#header { background-color: #EEEEEE; }
+		nav#mainmenu { background-color: #CCCCCC;}
+	</style>
+
+</head>
+	<body>
+		<header id="header">
+			<a href="/" class="logo">{% trans "GO5.RU" %}</a>
+			{% get_current_language as LANGUAGE_CODE %}
+			{% get_available_languages as LANGUAGES %}
+			{% get_language_info_list for LANGUAGES as languages %}
+			<div class="languages">
+				<p>{% trans "Language" %}:</p>
+				<ul class="languages">
+					{% for language in languages %}
+						<li>
+							<a href="/{{ language.code }}/"{% if language.code == LANGUAGE_CODE %} class="selected"{% endif %}>{{ language.name_local }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</header>
+		<nav id="mainmenu">
+			<ul>
+				<li><a href="{% url 'catalog.root' %}">Catalog Root</a></li>
+			</ul>
+		</nav>
+		{% block content %}{% endblock %}
+	</body>
+</html>
