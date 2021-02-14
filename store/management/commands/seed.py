@@ -1,8 +1,12 @@
 from django.core.management.base import BaseCommand
-from store.models import Category, Character, CharacterValue, Stock, Supplier, Currency, PriceType, Unit, Cluster
+from store.models import *
 from user.models import User
 from django.contrib.auth.models import Group
 from django.utils.translation import gettext_lazy as _
+from store.management.commands.data.units import UNITS
+from store.management.commands.data.brands import BRANDS
+from store.management.commands.data.characters import CHARACTERS
+from transliterate import slugify
 
 
 class Command(BaseCommand):
@@ -11,10 +15,52 @@ class Command(BaseCommand):
     # def add_arguments(self, parser):
     #     parser.add_argument('seed', nargs='+')
 
+    def create_generic(self):
+
+        user = User.objects.create(first_name='Admin', last_name='Admin', email='demo@solotony.com',
+                                   phone='+70000000000', is_active=True, is_superuser=True, is_staff=True)
+        user.set_password('admin')
+        user.save()
+
+        customers = Group.objects.create(name='customers')
+        partners = Group.objects.create(name='partners')
+
+        units = []
+        for unit in UNITS:
+            Unit.objects.create(name=unit[3], symbol=unit[6], handle=unit[2] or unit[6], system=unit[4], type=unit[1], multiplier=unit[5], icecat_id=unit[0])
+        Unit.preload()
+
+        # TODO all currencies
+        currencies = [
+            Currency(handle='USD', name=_('US dollar'), symbol=_('$'), symbol_before=True),
+            Currency(handle='EUR', name=_('Euro'), symbol=_('€'), symbol_before=False),
+            Currency(handle='RUR', name=_('Russian ruble'), symbol=_('&#x20bd;'), symbol_before=False),
+            Currency(handle='CNY', name=_('Renminbi'), symbol=_('&#xa5;'), symbol_before=False), #¥
+            Currency(handle='JPY', name=_('Japanese yen'), symbol=_('&#xa5;'), symbol_before=False), #¥
+            Currency(handle='GBP', name=_('Pound sterling'), symbol=_('&#xa3;'), symbol_before=False),  #£
+        ]
+
+        for currency in currencies:
+            currency.save()
+        Currency.preload()
+
+
+        price_types = [
+            PriceType(handle='RETAIL', name=_('Retail')),
+            PriceType(handle='OLD', name=_('Retail old')),
+            PriceType(handle='WHOLESALE', name=_('Wholesale')),
+            PriceType(handle='PROMOTION', name=_('Promotion')),
+        ]
+
+        for price_type in price_types:
+            price_type.save()
+        PriceType.preload()
+
+
     def create_demo(self):
 
         user = User.objects.create(first_name='Han', last_name='Solo', email='as@solotony.com',
-                                   phone='+79119478909', is_active=True, is_superuser=True, is_staff=True)
+                                       phone='+79119478909', is_active=True, is_superuser=True, is_staff=True)
         user.set_password('supaplex')
         user.save()
 
@@ -144,71 +190,39 @@ class Command(BaseCommand):
         categories[17].characters.set([characters[5], characters[6], characters[9]])  # Одежда
         categories[21].characters.set([characters[4]])  # Обувь
 
+        # icecat
 
-    def create_generic(self):
+        for brand in BRANDS:
+            Brand.objects.create(
+                name=brand[1],
+                icecat_id=brand[0],
+                handle=brand[1].upper()
+            )
+        Brand.preload()
 
-        user = User.objects.create(first_name='Admin', last_name='Admin', email='demo@solotony.com',
-                                   phone='+70000000000', is_active=True, is_superuser=True, is_staff=True)
-        user.set_password('admin')
-        user.save()
+        characters = dict()
+        for character in CHARACTERS:
+            # (5, 'Тактовая частота процессора', 18, 11073),
+            print(character)
+            unit=Unit.by_icecat[character[2]]
+            print(unit)
+            un = character[1]
+            if un in characters:
+                un += ' (' + str(character[0]) + ')'
 
-        customers = Group.objects.create(name='customers')
-        partners = Group.objects.create(name='partners')
-
-        # TODO all units
-        units = [
-            Unit(handle='ITEM', name=_('item'), symbol=_('it.'), metric=True, type='Item'),
-
-            Unit(handle='KG', name=_('kilogram'), symbol=_('Kg'), metric=True, type='Weight'),
-            Unit(handle='G', name=_('gram'), symbol=_('g'), metric=True, type='Weight'),
-            Unit(handle='LBS', name=_('pound'), symbol=_('lbs'), metric=False, type='Weight'),
-
-            Unit(handle='M', name=_('meter'), symbol=_('m'), metric=True, type='Length'),
-            Unit(handle='CM', name=_('centimeter'), symbol=_('сm'), metric=True, type='Length'),
-            Unit(handle='MM', name=_('millimeter'), symbol=_('сm'), metric=True, type='Length'),
-
-            Unit(handle='L', name=_('liter'), symbol=_('l'), metric=True, type='Volume'),
-            Unit(handle='ML', name=_('milliliter'), symbol=_('ml'), metric=True, type='Volume'),
-
-            Unit(handle='V', name=_('volt'), symbol=_('v'), metric=True, type='Voltage'),
-
-            Unit(handle='W', name=_('watt'), symbol=_('w'), metric=True, type='Power'),
-        ]
-
-        for unit in units:
-            unit.save()
-        Unit.preload()
-
-        # TODO all currencies
-        currencies = [
-            Currency(handle='USD', name=_('US dollar'), symbol=_('$'), symbol_before=True),
-            Currency(handle='EUR', name=_('Euro'), symbol=_('€'), symbol_before=False),
-            Currency(handle='RUR', name=_('Russian ruble'), symbol=_('&#x20bd;'), symbol_before=False),
-            Currency(handle='CNY', name=_('Renminbi'), symbol=_('&#xa5;'), symbol_before=False), #¥
-            Currency(handle='JPY', name=_('Japanese yen'), symbol=_('&#xa5;'), symbol_before=False), #¥
-            Currency(handle='GBP', name=_('Pound sterling'), symbol=_('&#xa3;'), symbol_before=False),  #£
-        ]
-
-        for currency in currencies:
-            currency.save()
-        Currency.preload()
-
-
-        price_types = [
-            PriceType(handle='RETAIL', name=_('Retail')),
-            PriceType(handle='OLD', name=_('Retail old')),
-            PriceType(handle='WHOLESALE', name=_('Wholesale')),
-            PriceType(handle='PROMOTION', name=_('Promotion')),
-        ]
-
-        for price_type in price_types:
-            price_type.save()
-        PriceType.preload()
-
+            characters[un] = Character.objects.create(
+                icecat_id=character[0],
+                internal_name=un,
+                public_name=character[1],
+                handle=slugify(character[1], 'ru')[:22] + '--' + str(character[0]),
+                unit=unit,
+                #character_type=Character.CHARACTER_TYPE_STRING
+            )
 
 
     def handle(self, *args, **options):
         self.create_generic()
         self.create_demo()
+        Category.build_tree()
 
 

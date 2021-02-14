@@ -17,9 +17,11 @@ from common.models.sluggable import SluggableMixin
 from common.models.timestamps import TimestampsMixin
 from common.models.seo import SeoMixin
 from django.utils.translation import gettext_lazy as _
-from .characters import Character
+from .characters import Character, CharacterChoice
 from .categories import Category
-from .simple_entites import Stock, Supplier, PriceType, Currency, Unit, Cluster
+from .simple_entites import Stock, Supplier, PriceType, Currency, Unit
+from .discounts import Cluster
+from .taxes import TaxCluster
 from user.models import User
 from .customers import Customer
 
@@ -51,7 +53,17 @@ class Product(SeoMixin, TimestampsMixin, SluggableMixin):
     cluster = models.ForeignKey(
         Cluster,
         verbose_name=_('Cluster'),
-        on_delete=models.DO_NOTHING,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL
+    )
+
+    tax_cluster = models.ForeignKey(
+        TaxCluster,
+        verbose_name=_('Tax cluster'),
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL
     )
 
     categories = models.ManyToManyField(
@@ -112,7 +124,7 @@ class Product(SeoMixin, TimestampsMixin, SluggableMixin):
     )
 
     def __str__(self):
-        return "{}: {}".format(self.name)
+        return "{}: {}".format(self.articul, self.name)
 
     @classmethod
     def calculateComplects(cls):
@@ -128,12 +140,12 @@ class Product(SeoMixin, TimestampsMixin, SluggableMixin):
     #     pass
 
 
-class Reserve:
+class Available:
 
     class Meta:
         app_label = 'store'
-        verbose_name = _('Reserve')
-        verbose_name_plural = _('Reserves')
+        verbose_name = _('Available')
+        verbose_name_plural = _('Available')
 
     amount = models.PositiveIntegerField(
         verbose_name=_('Amount')
@@ -143,8 +155,8 @@ class Reserve:
         Product,
         on_delete=models.CASCADE,
         verbose_name=_('Product'),
-        related_name='reserves',
-        related_query_name='reserve',
+        related_name='availables',
+        related_query_name='available',
         null=False,
         blank=False,
     )
@@ -153,8 +165,8 @@ class Reserve:
         Stock,
         on_delete=models.CASCADE,
         verbose_name=_('Stock'),
-        related_name='reserves',
-        related_query_name='reserve',
+        related_name='availables',
+        related_query_name='available',
         null=False,
         blank=False,
     )

@@ -166,6 +166,10 @@ class CategoryManger(models.Manager):
 
 
 class Category(SeoMixin, SluggableMixin, TimestampsMixin):
+    """
+    Catalog category
+    """
+
     class Meta:
         app_label = 'store'
         verbose_name = _('Category')

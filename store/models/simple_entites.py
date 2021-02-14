@@ -31,6 +31,20 @@ class PreloadableModel(models.Model):
             cls.by_handle[obj.handle] = obj
 
 
+class PreloadableModelIcecat(PreloadableModel):
+
+    class Meta:
+        abstract=True
+
+    @classmethod
+    def preload(cls):
+        cls.by_icecat = dict()
+        for obj in cls.objects.all():
+            cls.by_id[obj.id] = obj
+            cls.by_handle[obj.handle] = obj
+            cls.by_icecat[obj.icecat_id] = obj
+
+
 class Stock(PreloadableModel):
 
     class Meta:
@@ -154,6 +168,7 @@ class Currency(PreloadableModel):
 
     disabled = models.BooleanField(
         verbose_name=_('Disabled'),
+        default=False,
         help_text=_('Currency is disabled for being used')
     )
 
@@ -165,9 +180,32 @@ class Currency(PreloadableModel):
         return self.handle
 
 
-class Unit(PreloadableModel):
-    """
 
+UNIT_TYPES = [
+    ('Bit size', 'Bit size'),
+    ('Bit speed', 'Bit speed'),
+    ('Byte size', 'Byte size'),
+    ('Byte speed', 'Byte speed'),
+    ('Corner', 'Corner'),
+    ('Count', 'Count'),
+    ('Electric charge', 'Electric charge'),
+    ('Electric current', 'Electric current'),
+    ('Frequency', 'Frequency'),
+    ('Length', 'Length'),
+    ('luminance', 'luminance'),
+    ('Power', 'Power'),
+    ('Resolution', 'Resolution'),
+    ('Temperature', 'Temperature'),
+    ('Time', 'Time'),
+    ('Voltage', 'Voltage'),
+    ('Volume', 'Volume'),
+    ('Weight', 'Weight'),
+]
+
+
+class Unit(PreloadableModelIcecat):
+    """
+    Measurement unit
     """
     class Meta:
         app_label = 'store'
@@ -190,68 +228,51 @@ class Unit(PreloadableModel):
         blank=False,
         unique=True,
         verbose_name=_('Handle'),
-        help_text=_('case insensitive')
+        help_text=_('case insensitive'),
+        db_index=True,
     )
 
-    metric = models.BooleanField(
+    system = models.SmallIntegerField(
         verbose_name=_('Measurement system'),
-        choices=((True,'Metric'),(False,'Us'))
+        choices=((1,'Metric'),(2,'Imperial'),(3,'Other'))
     )
 
     type = models.CharField(
         verbose_name=_('Type'),
         max_length=20,
-        choices=(('Item', 'Item'), ('Weight', 'Weight'), ('Length', 'Length'), ('Volume','Volume'), ('Voltage','Voltage'),
-                 ('Power','Power'))
-    )
-
-    def __str__(self):
-        return self.name
-
-    def __repr__(self):
-        return self.handle
-
-
-class Cluster(PreloadableModel):
-    """
-Группа это альтернативная таксономия предназначенная для скидок и налогов.
-Группы являются ортогональными то есть один товар не может входить более чем в одну группу.
-Товары не входящие ни в одну из групп обрабатываются псевдогруппой "остальные товары".
-Группы не являются заменой категориям или характеристикам.
-
-Например для магазина на торгующего мебелью вы можете создать группы  "корпусная мебель"
-и "кресла"  и каждый из них назначить свою скидочную политику.
-
-Или для аптеки вы можете создать группу "Лекарственные средства"  и назначить для неё
-отдельную налоговую схему.
-    """
-    class Meta:
-        app_label = 'store'
-        verbose_name = _('Cluster')
-        verbose_name_plural = _('Clusters')
-
-    name = models.CharField(
-        max_length=200,
-        verbose_name=_('Cluster title')
-    )
-
-    handle = models.SlugField(
-        max_length=32,
         null=False,
         blank=False,
-        unique=True,
-        verbose_name=_('Handle'),
-        help_text=_('case insensitive')
+        default='Count',
+        choices=UNIT_TYPES
+    )
+
+    multiplier = models.FloatField(
+        verbose_name=_('Multiplier'),
+        null=True,
+        blank=True,
+        default=None
+    )
+
+    icecat_id = models.BigIntegerField(
+        verbose_name=_('IceCat ID'),
+        db_index=True,
+        null=True,
+        blank=True,
+        default=None
     )
 
     def __str__(self):
-        return self.name
+        return self.name or self.symbol
 
     def __repr__(self):
         return self.handle
+
 
 
 class Country(PreloadableModel):
+    """
+    Страна
+    """
 
     class Meta:
         app_label = 'store'

@@ -55,3 +55,4 @@ class SluggableMixin(models.Model):
     page_path = property(
         lambda self:reverse(self.route, self.slug)
     )
+

@@ -1,13 +1,13 @@
 from django.contrib import admin
-from ..models.characters import Character, CharacterValue
+from ..models.characters import Character, CharacterChoice
 
-class CharacterValueInline(admin.TabularInline):
-    model = CharacterValue
+class CharacterChoiceInline(admin.TabularInline):
+    model = CharacterChoice
 
 
 class CharacterAdmin(admin.ModelAdmin):
     model = Character
-    inlines = [CharacterValueInline]
+    inlines = [CharacterChoiceInline]
     prepopulated_fields = {"handle": ("internal_name",)}
 
     def get_inline_instances(self, request, obj:Character=None):

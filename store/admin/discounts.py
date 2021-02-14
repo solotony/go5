@@ -1,8 +1,8 @@
 from django.contrib import admin
-from ..models.discounts import DiscountPolicy, DiscountPolicyStepping, PerOrderStepping
+from ..models.discounts import DiscountPolicy, CumulativeStepping, PerOrderStepping
 
-class DiscountPolicySteppingInline(admin.TabularInline):
-    model = DiscountPolicyStepping
+class CumulativeSteppingInline(admin.TabularInline):
+    model = CumulativeStepping
     pass
 
 
@@ -12,4 +12,4 @@ class PerOrderSteppingInline(admin.TabularInline):
 
 
 class DiscountPolicyAdmin(admin.ModelAdmin):
-    inlines = (DiscountPolicySteppingInline, PerOrderSteppingInline, )
+    inlines = (CumulativeSteppingInline, PerOrderSteppingInline, )

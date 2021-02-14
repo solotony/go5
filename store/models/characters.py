@@ -21,21 +21,30 @@ from .simple_entites import Unit
 MAX_CHARACTERS = 63
 
 class Character(models.Model):
-    """
+    '''
     Класс реализует характеристики товара
-    """
+    '''
 
     class Meta:
         verbose_name = _('Character')
         verbose_name_plural = _('Characters')
         app_label = 'store'
+        unique_together=(('internal_name', 'unit'),)
 
     internal_name = models.CharField(
         max_length=100,
         null=False,
         blank=False,
-        unique=True,
         verbose_name=_('Internal character name'),
+        help_text=_('used in admin panel')
+    )
+
+    unit = models.ForeignKey(
+        Unit,
+        on_delete=models.DO_NOTHING,
+        null=True,
+        blank=True,
+        verbose_name=_('Character\'s unit'),
     )
 
     handle = models.SlugField(
@@ -52,6 +61,7 @@ class Character(models.Model):
         null=True,
         blank=True,
         verbose_name=_('Public character name'),
+        help_text=_('used in public interface')
     )
 
     help_text = models.CharField(
@@ -67,20 +77,22 @@ class Character(models.Model):
         verbose_name=_('Detailed description'),
     )
 
-    unit = models.ForeignKey(
-        Unit,
-        on_delete=models.DO_NOTHING,
-        null=True,
-        blank=True,
-        verbose_name=_("Character's unit"),
+    filterable = models.BooleanField(
+        default=True,
     )
 
-    filterable = models.BooleanField(
+    include_into_index_value = models.BooleanField(
+        default=True,
+    )
+
+    include_into_index_name = models.BooleanField(
         default=True,
     )
 
     position = models.PositiveSmallIntegerField(
         editable=False,
+        null=True,
+        blank=True,
         verbose_name = _('Character position in search map'),
     )
 
@@ -92,14 +104,19 @@ class Character(models.Model):
     CHARACTER_TYPE_DECIMAL1 = 3
     CHARACTER_TYPE_DECIMAL2 = 4
     CHARACTER_TYPE_DECIMAL3 = 5
-    CHARACTER_TYPE_SET = 6
+    CHARACTER_TYPE_ENUM = 6
     CHARACTER_TYPE_STRING = 7
+    CHARACTER_TYPE_SET = 8
 
     CHARACTER_TYPES = (
         (CHARACTER_TYPE_INTEGER, _('Integer value')),
         (CHARACTER_TYPE_FLOAT, _('Float value')),
-        (CHARACTER_TYPE_DECIMAL3, _('Fixed decimal value')),
-        (CHARACTER_TYPE_SET, _('Set of string values')),
+        (CHARACTER_TYPE_DECIMAL1, _('Fixed decimal value, 1 digit after comma')),
+        (CHARACTER_TYPE_DECIMAL2, _('Fixed decimal value, 2 digits after comma')),
+        (CHARACTER_TYPE_DECIMAL3, _('Fixed decimal value, 3 digits after comma')),
+        (CHARACTER_TYPE_ENUM, _('Enum')),
+        (CHARACTER_TYPE_STRING, _('String value')),
+        (CHARACTER_TYPE_SET, _('Set')),
     )
 
     _original_character_type = None
@@ -107,8 +124,16 @@ class Character(models.Model):
     character_type = models.IntegerField(
         null=False,
         blank=False,
-        default=CHARACTER_TYPE_INTEGER,
+        default=CHARACTER_TYPE_STRING,
         choices=CHARACTER_TYPES
+    )
+
+    icecat_id = models.BigIntegerField(
+        verbose_name=_('IceCat ID'),
+        db_index=True,
+        null=True,
+        blank=True,
+        default=None
     )
 
     def __init__(self, *args, **kwargs):
@@ -126,15 +151,16 @@ class Character(models.Model):
         return reverse('catalog.character', args=[self.handle])
 
 
-class CharacterValue(models.Model):
-    """
+
+class CharacterChoice(models.Model):
+    '''
     Класс реализует значения характеристик товара для
-    типа CHARACTER_TYPE_SET
-    """
+    типа CHARACTER_TYPE_ENUM и CHARACTER_TYPE_SET
+    '''
 
     class Meta:
-        verbose_name = _('Character value')
-        verbose_name_plural = _('Character values')
+        verbose_name = _('Character choice')
+        verbose_name_plural = _('Character choices')
         app_label = 'store'
         unique_together=['character', 'value']
 
@@ -154,3 +180,5 @@ class CharacterValue(models.Model):
 
     def __str__(self):
         return self.value
+
+

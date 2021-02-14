@@ -25,7 +25,9 @@ SECRET_KEY = 'vlu&0ef07fpdjv&g4g+h21z*!4*c^+xwfii88jr7msee2y8eyq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'go5.ru', 'go5.loc', '127.0.0.1'
+]
 
 INTERNAL_IPS = [
     '127.0.0.1',
@@ -43,12 +45,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'django.contrib.admindocs',
+    #'django.contrib.sites',
     'adminsortable',
     'django_extensions',
     'transliterate',
     'mptt',
     'django_mptt_admin',
     'debug_toolbar',
+    'easy_thumbnails',
+    #'django_messages',
     'rosetta',
     'user',
     'common',
@@ -230,4 +235,16 @@ LOGGING = {
             'propagate': True,
         }
     },
+}
+
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'admin':  {'size': (200, 200), 'crop': False},
+
+        'brand.big': {'size': (800, 800), 'crop': False},
+        'brand.small': {'size': (400, 400), 'crop': False},
+        'brand.tiny': {'size': (200, 200), 'crop': False},
+        'brand.thumb': {'size': (100, 100), 'crop': False},
+    }
 }
